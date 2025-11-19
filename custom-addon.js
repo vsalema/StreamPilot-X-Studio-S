@@ -215,11 +215,17 @@
     setOpen(!open);
   });
   // --- Bouton Radio: reproduire le comportement de l'entrée "R.Alfa" ---
-  var btnRadio = $('btnradio'); // utilise le helper $(id) défini en haut (getElementById)
+    // --- Bouton Radio : comportement identique à l'entrée "R.Alfa" ---
+  var btnRadio = $('btnradio'); // helper = getElementById
   if (btnRadio) {
-    btnRadio.addEventListener('click', function () {
+    btnRadio.addEventListener('click', function (e) {
+      // Évite toute navigation "bizarre" (form, etc.)
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
 
-      // 1) On essaie d'abord de trouver la ligne "R.Alfa" dans la customList et de simuler un clic
+      // 1) Si la customList est rendue et contient "R.Alfa" → on simule un clic sur la ligne
       try {
         var rows = Array.from(list.querySelectorAll('.custom-item'));
         var row = rows.find(function (r) {
@@ -228,15 +234,14 @@
         });
 
         if (row) {
-          // Même comportement que si on cliquait dans la liste
-          row.click();
+          row.click(); // déclenche le même handler que dans render()
           return;
         }
-      } catch(e) {
-        // on ignore, on passera au fallback URL
+      } catch (err) {
+        // on ignore et on passera au fallback URL
       }
 
-      // 2) Fallback : on récupère l'entrée "R.Alfa" dans CUSTOM_LIST
+      // 2) Fallback : on cherche "R.Alfa" dans CUSTOM_LIST
       var data = Array.isArray(window.CUSTOM_LIST) ? window.CUSTOM_LIST : [];
       var radioItem = data.find(function (it) {
         return it && it.title === 'R.Alfa';
@@ -246,17 +251,13 @@
         ? radioItem.url
         : 'https://vsalema.github.io/radio-alfa-5/';
 
-      // 3) On ouvre l’overlay via la fonction interne openOverlay (utilise showOverlay + iframe)
-      try {
-        openOverlay(url);
-      } catch(e) {
-        // dernier secours : nouvelle fenêtre si vraiment openOverlay n'est pas dispo
-        window.open(url, '_blank');
-      }
+      // 3) On force l’ouverture via l’overlay interne (iframe), SANS window.open
+      openOverlay(url);
     });
   }
 
 })();
+
 
 // --- Force ouverture de channelList quand on clique un exemple du menu ---
 document.addEventListener("click", (e) => {
