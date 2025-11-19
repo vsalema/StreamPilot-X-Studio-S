@@ -1144,4 +1144,13 @@ a:focus-visible,
   display: inline-flex;
   align-items: center;
 }
+/* Version mobile */
+@media (max-width: 430px) {
+  #clockDisplay {
+    padding: 6px;
+    width: 46px;
+    justify-content: center;
+    font-size: 11px;
+  }
+}
 
