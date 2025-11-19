@@ -308,21 +308,7 @@ try {
 } catch(e) {}
 
 
-  btnToggle.addEventListener('click', function(){
-    if(!open) render();
-    setOpen(!open);
-  });
-
-  // --- Bouton Radio: reproduire le comportement de l'entrée "R.Alfa" ---
-  var btnRadio = $('btnradio');
-  if (btnRadio) {
-    btnRadio.addEventListener('click', function () {
-      // ... code ci-dessus ...
-    });
-  }
-
-})();
-
+ 
 
 
 
