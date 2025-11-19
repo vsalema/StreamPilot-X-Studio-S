@@ -214,6 +214,52 @@
     if(!open) render();
     setOpen(!open);
   });
+  // --- Bouton Radio: reproduire le comportement de l'entrée "R.Alfa" ---
+  var btnRadio = $('btnradio'); // utilise le helper $(id) défini en haut (getElementById)
+  if (btnRadio) {
+    btnRadio.addEventListener('click', function () {
+
+      // 1) On essaie d'abord de trouver la ligne "R.Alfa" dans la customList et de simuler un clic
+      try {
+        var rows = Array.from(list.querySelectorAll('.custom-item'));
+        var row = rows.find(function (r) {
+          var nameEl = r.querySelector('.name');
+          return nameEl && nameEl.textContent.trim() === 'R.Alfa';
+        });
+
+        if (row) {
+          // Même comportement que si on cliquait dans la liste
+          row.click();
+          return;
+        }
+      } catch(e) {
+        // on ignore, on passera au fallback URL
+      }
+
+      // 2) Fallback : on récupère l'entrée "R.Alfa" dans CUSTOM_LIST
+      var data = Array.isArray(window.CUSTOM_LIST) ? window.CUSTOM_LIST : [];
+      var radioItem = data.find(function (it) {
+        return it && it.title === 'R.Alfa';
+      });
+
+      var url = radioItem && radioItem.url
+        ? radioItem.url
+        : 'https://vsalema.github.io/radio-alfa-5/';
+
+      // 3) On ouvre l’overlay via la fonction interne openOverlay (utilise showOverlay + iframe)
+      try {
+        openOverlay(url);
+      } catch(e) {
+        // dernier secours : nouvelle fenêtre si vraiment openOverlay n'est pas dispo
+        window.open(url, '_blank');
+      }
+    });
+  }
+
+})();
+
+
+
 })();
 
 
