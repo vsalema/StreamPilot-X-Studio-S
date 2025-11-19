@@ -1,21 +1,22 @@
 (function(){
   // Configuration initiale: à éditer par l'utilisateur
   window.CUSTOM_LIST = window.CUSTOM_LIST || [
-    { title: "R.Alfa",  logo: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Radio_Alfa.png", type: "overlay", url: "https://vsalema.github.io/radio-alfa-4/" },
-    { title: "TF1",  logo: "https://assets-fr.imgfoot.com/media/cache/150x150/tf1-671bb354bb372.png", type: "overlay", url: "https://tv.free.fr/home/channels/536/play" },
-    { title: "CMTV", logo: "https://cdn.brandfetch.io/idaBgpGjjj/w/446/h/223/theme/dark/logo.png?c=1dxbfHSJFAPEGdCLU4o5B", type: "overlay", url: "//popcdn.day/player.php?stream=CMTVPT" },
-    { title: "TVI",  logo: "https://upload.wikimedia.org/wikipedia/fr/6/63/TVI_logo_2017.png", type: "overlay", url: "https://vsalema.github.io/tvi2/" },
-    { title: "TVIR", logo: "https://www.zupimages.net/up/24/14/xplw.jpg", type: "overlay", url: "https://vsalema.github.io/tvi-reality/" },
+    { title: "TF1",  logo: "/StreamPilot-X-Studio-S/logos/tf1.png", type: "overlay", url: "https://vsalema.github.io/play/?https://raw.githubusercontent.com/mikekaprielian/rtnaodhor93n398/main/fr/videotf1.m3u8" },
+    { title: "TF1.SF",  logo: "/StreamPilot-X-Studio-S/logos/tf1sf.png", type: "overlay", url: "https://vsalema.github.io/play/?https://sv1.data-stream.top/40198e2d9155209a7624aafd668cc0b3a8da90afa64027bb3df8179d110a4580/hls/seriefilmes.m3u8" },
+    { title: "CMTV", logo: "/StreamPilot-X-Studio-S/logos/cmtv.png", type: "overlay", url: "//popcdn.day/player.php?stream=CMTVPT" },
+    { title: "TVI",  logo: "/StreamPilot-X-Studio-S/logos/TVI.png", type: "overlay", url: "https://vsalema.github.io/tvi2/" },
+    { title: "TVIR", logo: "/StreamPilot-X-Studio-S/logos/tvir.jpg", type: "overlay", url: "https://vsalema.github.io/tvi-reality/" },
     { title: "TVIF", logo: "https://www.iol.pt/multimedia/oratvi/multimedia/imagem/id/616562540cf279ce41ddfe4f/", type: "overlay", url: "https://vsalema.github.io/tvi-ficcao/" },
-    { title: "TVIA", logo: "https://raw.githubusercontent.com/imagesloads/images/refs/heads/main/img_5ba20c62b2143299.png", type: "overlay", url: "https://vsalema.github.io/tvi-africa/" },
-    { title: "SIC",  logo: "https://www.zupimages.net/up/24/13/ax1g.jpg", type: "overlay", url: "https://vsalema.github.io/sic/" },
-    { title: "CNN",  logo: "https://e1.pngegg.com/pngimages/206/434/png-clipart-logo-cnn-actualites-logo-de-nbc-medias-texte-rouge-ligne.png", type: "overlay", url: "https://vsalema.github.io/CNN/" },
-    { title: "RTP3", logo: "https://cdn-images.rtp.pt/common/img/channels/logos/color/horizontal/64-393818101410.png?v=3&w=860", type: "overlay", url: "https://vsalema.github.io/play/?https://streaming-live.rtp.pt/liverepeater/rtpi.smil/playlist.m3u8" },
-    { title: "RTPI", logo: "https://www.atelevisao.com/wp-content/uploads/2012/03/RTP-Internacional-Nova-Imagem.jpg", type: "overlay", url: "https://vsalema.github.io/play/?https://streaming-live.rtp.pt/liverepeater/rtpi.smil/playlist.m3u8" },
-    { title: "CANAL+",  logo: "https://1000logos.net/wp-content/uploads/2023/03/Canal-Logo-1984-768x432.png", type: "overlay", url: "//popcdn.day/go.php?stream=CANALPLFR" },
-    { title: "CANAL+F", logo: "https://upload.wikimedia.org/wikipedia/fr/3/3b/C%2B_Foot.png", type: "overlay", url: "//popcdn.day/go.php?stream=FOOTPLUSFR" },
-    { title: "RMC Sp",  logo: "https://raw.githubusercontent.com/imagesloads/images/refs/heads/main/img_ce1754f94a887510.png", type: "overlay", url: "https://popcdn.day/go.php?stream=RMCSPORT1FR" },
-    { title: "BTV", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d8/BTV_Black.svg", type: "overlay", url: "//popcdn.day/go.php?stream=BTV1" },
+    { title: "TVIA", logo: "/StreamPilot-X-Studio-S/logos/tvia.png", type: "overlay", url: "https://vsalema.github.io/tvi-africa/" },
+    { title: "SIC",  logo: "/StreamPilot-X-Studio-S/logos/sic.jpg", type: "overlay", url: "https://vsalema.github.io/sic/" },
+    { title: "CNN",  logo: "/StreamPilot-X-Studio-S/logos/cnn.png", type: "overlay", url: "https://vsalema.github.io/CNN/" },
+    { title: "RTP1", logo: "/StreamPilot-X-Studio-S/logos/rtp1.jpg", type: "overlay", url: "https://vsalema.github.io/play/?https://streaming-live.rtp.pt/liverepeater/smil:rtp1HD.smil/playlist.m3u8" },
+    { title: "RTPN", logo: "/StreamPilot-X-Studio-S/logos/rtpn.png", type: "overlay", url: "https://vsalema.github.io/play/?https://streaming-live.rtp.pt/livetvhlsDVR/rtpnHDdvr.smil/playlist.m3u8?DVR" },
+    { title: "RTPI", logo: "/StreamPilot-X-Studio-S/logos/rtpi.jpg", type: "overlay", url: "https://vsalema.github.io/play/?https://streaming-live.rtp.pt/liverepeater/rtpi.smil/playlist.m3u8" },
+    { title: "CANAL+",  logo: "/StreamPilot-X-Studio-S/logos/canal+.png", type: "overlay", url: "//popcdn.day/go.php?stream=CANALPLFR" },
+    { title: "CANAL+F", logo: "/StreamPilot-X-Studio-S/logos/C+_Foot.png", type: "overlay", url: "//popcdn.day/go.php?stream=FOOTPLUSFR" },
+    { title: "RMC Sp",  logo: "/StreamPilot-X-Studio-S/logos/rmcf.png", type: "overlay", url: "https://popcdn.day/go.php?stream=RMCSPORT1FR" },
+    { title: "BTV", logo: "/StreamPilot-X-Studio-S/logos/btv.svg", type: "overlay", url: "//popcdn.day/go.php?stream=BTV1" },
     { title: "SCP", logo: "https://pplware.sapo.pt/wp-content/uploads/2017/06/scp_00.jpg", type: "overlay", url: "//popcdn.day/go.php?stream=SPT1" },
     { title: "11",  logo: "https://www.zupimages.net/up/24/13/qj99.jpg", type: "overlay", url: "https://popcdn.day/go.php?stream=Canal11" },
     { title: "BOLA", logo: "https://www.telesatellite.com/images/actu/a/abolatv.jpg", type: "overlay", url: "//popcdn.day/go.php?stream=ABOLA" },
@@ -28,7 +29,8 @@
     { title: "DAZN 2 PT",  logo: "https://upload.wikimedia.org/wikipedia/commons/7/71/DAZN_logo.svg", type: "overlay", url: "//popcdn.day/go.php?stream=ELEVEN2" },
     { title: "DAZN 3 PT",  logo: "https://upload.wikimedia.org/wikipedia/commons/7/71/DAZN_logo.svg", type: "overlay", url: "//popcdn.day/go.php?stream=ELEVEN3" },
     { title: "DAZN 4 PT",  logo: "https://upload.wikimedia.org/wikipedia/commons/7/71/DAZN_logo.svg", type: "overlay", url: "//popcdn.day/go.php?stream=ELEVEN4" },
-    { title: "DAZN 5 PT",  logo: "https://upload.wikimedia.org/wikipedia/commons/7/71/DAZN_logo.svg", type: "overlay", url: "//popcdn.day/go.php?stream=ELEVEN5" }
+    { title: "DAZN 5 PT",  logo: "https://upload.wikimedia.org/wikipedia/commons/7/71/DAZN_logo.svg", type: "overlay", url: "//popcdn.day/go.php?stream=ELEVEN5" },
+    { title: "R.Alfa",  logo: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Radio_Alfa.png", type: "overlay", url: "https://vsalema.github.io/radio-alfa-5/" }
   ];
 })();
   
