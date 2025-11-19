@@ -215,7 +215,30 @@
     setOpen(!open);
   });
 })();
+// === Bouton Radio : ouvrir l'entrée "R.Alfa" en overlay ===
+var btnRadio = $('#btnradio');
+  if (btnRadio) {
+    btnRadio.addEventListener('click', function () {
+      // On récupère l'entrée "R.Alfa" depuis CUSTOM_LIST
+      var data = Array.isArray(window.CUSTOM_LIST) ? window.CUSTOM_LIST : [];
+      var radioItem = data.find(function (it) {
+        return it && it.title === "R.Alfa";
+      });
 
+      var url  = radioItem && radioItem.url  ? radioItem.url  : "https://vsalema.github.io/radio-alfa-5/";
+      var logo = radioItem && radioItem.logo ? radioItem.logo : null;
+      var title = radioItem && radioItem.title ? radioItem.title : "R.Alfa";
+
+      // Met à jour le header central (titre + logo)
+      if (typeof window.spxRenderChannelHeader === "function") {
+        window.spxRenderChannelHeader(title, logo, "Radio");
+      }
+
+      // Ouvre l’overlay avec l’URL de R.Alfa
+      openOverlay(url);
+    });
+  }
+})();
 
 // --- Force ouverture de channelList quand on clique un exemple du menu ---
 document.addEventListener("click", (e) => {
@@ -266,37 +289,24 @@ try {
   });
 } catch(e) {}
 
-(function () {
-  // Si tu n'as pas déjà ce helper dans ce fichier, ajoute-le :
-  const $ = (sel) => document.querySelector(sel);
 
-  var btnRadio = $('#btnradio');   // <<< le # est OBLIGATOIRE
-  if (btnRadio) {
-    btnRadio.addEventListener('click', function () {
-      // On récupère l'entrée "R.Alfa" depuis CUSTOM_LIST
-      var data = Array.isArray(window.CUSTOM_LIST) ? window.CUSTOM_LIST : [];
-      var radioItem = data.find(function (it) {
-        return it && it.title === "R.Alfa";
-      });
 
-      var url   = radioItem && radioItem.url   ? radioItem.url   : "https://vsalema.github.io/radio-alfa-5/";
-      var logo  = radioItem && radioItem.logo  ? radioItem.logo  : null;
-      var title = radioItem && radioItem.title ? radioItem.title : "R.Alfa";
 
-      // Met à jour le header central (titre + logo) si dispo
-      if (typeof window.spxRenderChannelHeader === "function") {
-        window.spxRenderChannelHeader(title, logo, "Radio");
-      }
 
-      // Ouvre l’overlay avec l’URL de R.Alfa
-      if (typeof window.openOverlay === "function") {
-        window.openOverlay(url);
-      } else {
-        // fallback : ouvrir dans un nouvel onglet si jamais
-        window.open(url, '_blank');
-      }
-    });
-  }
-})();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
