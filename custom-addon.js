@@ -258,11 +258,6 @@
 
 })();
 
-
-
-})();
-
-
 // --- Force ouverture de channelList quand on clique un exemple du menu ---
 document.addEventListener("click", (e) => {
   const btn = e.target.closest("#examples button, #examples .item, #examples .example-btn");
@@ -313,6 +308,20 @@ try {
 } catch(e) {}
 
 
+  btnToggle.addEventListener('click', function(){
+    if(!open) render();
+    setOpen(!open);
+  });
+
+  // --- Bouton Radio: reproduire le comportement de l'entrée "R.Alfa" ---
+  var btnRadio = $('btnradio');
+  if (btnRadio) {
+    btnRadio.addEventListener('click', function () {
+      // ... code ci-dessus ...
+    });
+  }
+
+})();
 
 
 
